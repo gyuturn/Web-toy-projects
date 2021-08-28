@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html >
+  <head>
+    <meta charset="utf-8">
+    <title>Players</title>
+    <link rel="stylesheet" href="st.css">
+    <style>
+
+      .players{
+        position: absolute;
+        display:inline;
+        text-align: center;
+      }
+      .playerIMG{
+        width:90px;
+         height: 90px;
+      }
+      .playersName{
+        margin-top:0px;
+      }
+      .LeagueTable{
+        display:gird;
+        grid-template-columns:  100fr 1fr 1fr 1fr 1fr;
+      }
+    </style>
+
+
+  </head>
+
+  <body>
+
+
+    <h1>
+    <a href="main.html"><img src="field/Liverpool.png" width=50px height=50px></a>
+    <a href="main.html">Liverpool</a>
+  </h1>
+  <div id="menu">
+    <div class="box1"><a href="players.html">Best11</a></div>
+    <div class="box1">선수 스페셜</div>
+    <div class="box1">경기 일정</div>
+  </div>
+  <br><br>
+  <div style="position:relative; display:inline-block;;" >
+    <div id="SF" style="width:1200px;">
+      <img src="field/soccerField.jpg" width=1200px height= 750px>
+    </div>
+
+
+    <div id="PlayersBox" >
+      <div class="players" style="top:320px; left:125px;">
+        <img  class="playerIMG"src="players/allison.jpg">
+        <p class="playersName">1.Allsion</p>
+      </div>
+
+      <div class="players" style="top:60px; left:300px;">
+        <img  class="playerIMG"src="players/robo.jpg">
+        <p class="playersName">26.Robertson</p>
+      </div>
+
+      <div class="players" style="top:220px; left:265px;">
+        <img  class="playerIMG"src="players/virgil.jpg">
+        <p class="playersName">4.Virgil</p>
+      </div>
+
+      <div class="players" style="top:430px; left:275px;">
+        <img  class="playerIMG"src="players/conate.png">
+        <p class="playersName">5.Conate</p>
+      </div>
+
+      <div class="players" style="top:600px; left:300px;">
+        <img  class="playerIMG"src="players/anold.jpg">
+        <p class="playersName">66.Anold</p>
+      </div>
+
+      <div class="players" style="top:320px; left:465px;">
+        <img  class="playerIMG"src="players/fabinho.jpg">
+        <p class="playersName">3.Fabinho</p>
+      </div>
+
+      <div class="players" style="top:200px; left:585px;">
+        <img  class="playerIMG"src="players/thiago.png">
+        <p class="playersName">6.Thiago</p>
+      </div>
+
+
+      <div class="players" style="top:450px; left:585px;">
+        <img  class="playerIMG"src="players/henderson.jpg">
+        <p class="playersName">14.Henderson</p>
+      </div>
+
+      <div class="players" style="top:60px; left:865px;">
+        <img  class="playerIMG"src="players/mane.jpg">
+        <p class="playersName">10.Mane</p>
+      </div>
+
+      <div class="players" style="top:600px; left:865px;">
+        <img  class="playerIMG"src="players/salah.jpg">
+        <p class="playersName">11.Salah</p>
+      </div>
+
+      <div class="players" style="top:320px; left:1045px;">
+        <img  class="playerIMG"src="players/firminho.jpg">
+        <p class="playersName">9.Firminho</p>
+      </div>
+
+    </div>
+
+
+  </div>
+  <div style="display:inline-block">
+
+   <div class="LeagueTable">
+     <table border="1" id="tb">
+       <tr>
+         <th>순위</th>
+        <th>팀명</th>
+        <th>경기</th>
+        <th>승</th>
+        <th>무</th>
+        <th>패</th>
+        <th>승점</th>
+       </tr>
+
+       <tr>
+
+        <td></td>
+
+        <td>문어</td>
+
+      </tr>
+
+
+
+     </table>
+
+
+     <input type="button" value="관리자사용(랭크업데이트)" onclick="S()">
+
+
+
+   </div>
+  </div>
+
+
+  <script>
+
+  테이블 만들기
+    var TeamList=[
+      {Name:"WestHam", Win:0, Lose:0, Draw:0, Points: (this.Win*3+this.Draw), Match:0},
+      {Name:"Chelsea", Win:0, Lose:0, Draw:0, Points: (this.Win*3+this.Draw), Match:0},
+      {Name:"Liverpool", Win:0, Lose:0, Draw:0, Points: (this.Win*3+this.Draw), Match:0},
+      {Name:"Tottenham", Win:0, Lose:0, Draw:0, Points: (this.Win*3+this.Draw), Match:0},
+      {Name:"Manchester Utd", Win:0, Lose:0, Draw:0, Points: (this.Win*3+this.Draw), Match:0},
+      {Name:"Everton", Win:0, Lose:0, Draw:0, Points: (this.Win*3+this.Draw), Match:0},
+      {Name:"Brentford", Win:0, Lose:0, Draw:0, Points: (this.Win*3+this.Draw), Match:0},
+      {Name:"Man. City", Win:0, Lose:0, Draw:0, Points: (this.Win*3+this.Draw), Match:0},
+      {Name:"Aston Villa", Win:0, Lose:0, Draw:0, Points: (this.Win*3+this.Draw), Match:0},
+      {Name:"Watford", Win:0, Lose:0, Draw:0, Points: (this.Win*3+this.Draw), Match:0},
+      {Name:"Leicester City", Win:0, Lose:0, Draw:0, Points: (this.Win*3+this.Draw), Match:0},
+      {Name:"Southampton", Win:0, Lose:0, Draw:0, Points: (this.Win*3+this.Draw), Match:0},
+      {Name:"Crystal Palace", Win:0, Lose:0, Draw:0, Points: (this.Win*3+this.Draw), Match:0},
+      {Name:"Leeds United", Win:0, Lose:0, Draw:0, Points: (this.Win*3+this.Draw), Match:0},
+      {Name:"Wolves", Win:0, Lose:0, Draw:0, Points: (this.Win*3+this.Draw), Match:0},
+      {Name:"Burnley", Win:0, Lose:0, Draw:0, Points: (this.Win*3+this.Draw), Match:0},
+      {Name:"NewCastle", Win:0, Lose:0, Draw:0, Points: (this.Win*3+this.Draw), Match:0},
+      {Name:"Arsenal", Win:0, Lose:0, Draw:0, Points: (this.Win*3+this.Draw), Match:0},
+      {Name:"Norwich City", Win:0, Lose:0, Draw:0, Points: (this.Win*3+this.Draw), Match:0},
+    ]
+
+    function FixRank(){
+      var team = prompt("팀을 입력해주세요(정확히 입력해주세요)");
+      alert(team+"이 입력되었습니다.");
+    }
+
+    //승점에 따른 랭크 정렬
+    function SortRank(){
+      var SortField="Points";
+      TeamList.sort(function(a,b)){
+        return b[SortField]-a[SortField];
+      }
+    }
+
+    function MakeRankTable(){
+      document.write("<tr>");
+      for(int i=0;i<TeamList.length;i--){
+        document.write("<td>");
+        document.write(i+1);
+        document.write(TeamList[i].Name);
+        document.write(TeamList[i].Match);
+        document.write(TeamList[i].Win);
+        document.write(TeamList[i].Draw);
+        document.write(TeamList[i].Lose);
+        document.write(TeamList[i].Points);
+        document.write("</td>");
+
+
+      }
+      document.write("</tr>");
+
+    }
+
+  </script>
+  </body>
+</html>
