@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html >
+  <head>
+    <meta charset="utf-8">
+    <title>Players</title>
+    <link rel="stylesheet" href="st.css">
+    <style>
+
+
+      .players{
+        position: absolute;
+        display:inline;
+        text-align: center;
+      }
+      .playerIMG{
+        width:90px;
+         height: 90px;
+      }
+      .playersName{
+        margin-top:0px;
+      }
+      
+
+      table {
+      border-top: 1px solid #444444;
+      border-collapse: collapse;
+      }
+      th, td {
+        border-bottom: 1px solid #444444;
+        padding: 5px;
+      }
+
+    </style>
+
+
+  </head>
+
+  <body>
+
+
+    <h1>
+    <a href="main.html"><img src="field/Liverpool.png" width=50px height=50px></a>
+    <a href="main.html">Liverpool</a>
+  </h1>
+  <div id="menu">
+    <div class="box1"><a href="players.html">Best11</a></div>
+    <div class="box1">선수 스페셜</div>
+    <div class="box1">경기 일정</div>
+  </div>
+  <br><br><br>
+  <h2 class = "">GOALKEEPERS</h2>
+
+
+
+
+
+
+
+   <div id="LeagueTable">
+     <!-- //리그테이블 JS사 -->
+    </div>
+
+     <input type="button" value="관리자사용(랭크업데이트)" onclick="S()">
+
+
+
+
+
+
+  <script>
+
+  let TeamList = [
+    {Name:"WestHam", Win:0, Lose:0, Draw:0,  Match:0},
+    {Name:"Chelsea", Win:0, Lose:0, Draw:0, Match:0},
+    {Name:"Liverpool", Win:0, Lose:0, Draw:0,Match:0},
+    {Name:"Tottenham", Win:0, Lose:0, Draw:0,Match:0},
+    {Name:"Manchester Utd", Win:0, Lose:0, Draw:0,  Match:0},
+    {Name:"Everton", Win:0, Lose:0, Draw:0,  Match:0},
+    {Name:"Brentford", Win:0, Lose:0, Draw:0,  Match:0},
+    {Name:"Man. City", Win:0, Lose:0, Draw:0, Match:0},
+    {Name:"Aston Villa", Win:0, Lose:0, Draw:0,  Match:0},
+    {Name:"Watford", Win:0, Lose:0, Draw:0,  Match:0},
+    {Name:"Leicester City", Win:0, Lose:0, Draw:0,  Match:0},
+    {Name:"Southampton", Win:0, Lose:0, Draw:0,  Match:0},
+    {Name:"Crystal Palace", Win:0, Lose:0, Draw:0,Match:0},
+    {Name:"Leeds United", Win:0, Lose:0, Draw:0,  Match:0},
+    {Name:"Wolves", Win:0, Lose:0, Draw:0,  Match:0},
+    {Name:"Burnley", Win:0, Lose:0, Draw:0,  Match:0},
+    {Name:"NewCastle", Win:0, Lose:0, Draw:0,Match:0},
+    {Name:"Arsenal", Win:0, Lose:0, Draw:0,  Match:0},
+    {Name:"Norwich City", Win:0, Lose:0, Draw:0,  Match:0},
+  ];
+
+  //순위를 알기위해 승점 나타내기
+  for(let i=0;i<TeamList.length;i++){
+    TeamList[i].valueOf=function(){
+      return this.Win*3+this.Draw
+    }
+  }
+
+  //내림차순으로 정렬(승점)
+  TeamList.sort(function(a,b){return b-a});
+
+  //leaguetable 만들
+  var str="<table>"
+     str += "<tr>";
+     str += "<th>순위</th>";
+     str += "<th>팀명</th>";
+     str += "<th>승</th>";
+     str += "<th>무</th>";
+     str += "<th>패</th>";
+     str += "<th>승점</th>";
+     str += "</tr>";
+
+
+     for(let i=0;i<TeamList.length;i++){
+       str += "<tr>";
+       str+="<td>";
+       str+=(i+1);
+       str+="</td>";
+
+       str+="<td>";
+      str+=TeamList[i].Name;
+      str+="</td>";
+
+      str+="<td>";
+      str+=TeamList[i].Win;
+      str+="</td>";
+
+      str+="<td>";
+      str+=TeamList[i].Draw;
+      str+="</td>";
+
+      str+="<td>";
+      str+=TeamList[i].Lose;
+      str+="</td>";
+
+      str+="<td>";
+      str+=TeamList[i]+0;// 승점
+      str+="</td>";
+
+
+        str += "</tr>";
+     }
+
+     str+="</table>";
+
+
+
+
+
+
+
+
+
+  document.getElementById("LeagueTable").innerHTML=str;
+
+//스크립트 위치가 이상한가? 나올때도 있고 안나올떄도 있음
+
+  </script>
+
+  </body>
+</html>
